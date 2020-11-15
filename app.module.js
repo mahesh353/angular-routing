@@ -15,7 +15,9 @@ var about_us_component_1 = require('./about-us.component');
 var app_component_1 = require('./app.component');
 var contact_us_component_1 = require('./contact-us.component');
 var home_component_1 = require('./home.component');
+var tag_pipe_1 = require('./pipes/tag.pipe');
 var students_service_1 = require('./services/students.service');
+var student_details_component_1 = require('./student-details.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,9 +27,10 @@ var AppModule = (function () {
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'home', component: home_component_1.HomeComponent },
                     { path: 'contact-us', component: contact_us_component_1.ContactUsComponent },
-                    { path: 'about-us', component: about_us_component_1.AboutUsComponent }
+                    { path: 'about-us', component: about_us_component_1.AboutUsComponent },
+                    { path: 'student-details/:id', component: student_details_component_1.StudentDetailsComponent }
                 ])],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_us_component_1.AboutUsComponent, contact_us_component_1.ContactUsComponent],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_us_component_1.AboutUsComponent, contact_us_component_1.ContactUsComponent, student_details_component_1.StudentDetailsComponent, tag_pipe_1.TagPipe],
             bootstrap: [app_component_1.AppComponent],
             providers: [students_service_1.StudentService]
         }), 

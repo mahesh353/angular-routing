@@ -1,8 +1,4 @@
-<h1>This is home Component</h1>
-
-<hr>
-
-<!-- <div class="container">
+<div class="container">
   <table class="table table-bordered" *ngIf="isShowTable">
     <thead>
       <tr>
@@ -15,8 +11,8 @@
     <tbody>
       <tr *ngFor="let student of students">
         <td>{{student.id}}</td>
-        <td>{{student.name}}</td>
-        <td>{{student.address}}</td>
+        <td (click)="navigateToStudentDetails(student.id)">{{student.name | tag : student.gender}}</td>
+        <td>{{student.address }}</td>
         <td>{{student.gender}}</td>
       </tr>
     </tbody>
@@ -25,7 +21,7 @@
   <br>
 
   <button class="btn-primary" (click)="clickEventHandler()">{{buttonText}}</button>
-</div> -->
+</div> 
 
 
 

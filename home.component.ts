@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { StudentService } from "./services/students.service";
 
 
@@ -10,29 +11,29 @@ import { StudentService } from "./services/students.service";
 
 export class HomeComponent {
 
-    // students: any = [];
+    students: any = [];
 
-    // constructor(private _studentService : StudentService){
+    constructor(private _studentService: StudentService, private _router: Router) {
 
-    //     this.students = this._studentService.getStudents();
+        this.students = this._studentService.getStudents();
 
-    // }
+    }
+
+    isShowTable: any = true;
+
+    buttonText: any = "Hide Table";
+
+    clickEventHandler() {
+        this.isShowTable = !this.isShowTable;
+        this.buttonText = this.isShowTable ? "Hide Table" : "Show Table";
+    }
+
+    navigateToStudentDetails(id) {
+        //console.log('student clicked with id - ' + id);
 
 
+        this._router.navigateByUrl('student-details/' + id);
 
-    // isShowTable: any = true;
 
-    // buttonText: any = "Hide Table";
-
-    // // students: any = [
-    // //     { id: 1, name: 'Ram', address: 'Thane', gender: 'Male' },
-    // //     { id: 2, name: 'Seeta', address: 'Kalyan', gender: 'Female' },
-    // //     { id: 3, name: 'Laxman', address: 'Thane', gender: 'Male' },
-    // //     { id: 4, name: 'Bharat', address: 'Thane', gender: 'Male' }
-    // // ]
-
-    // clickEventHandler() {
-    //     this.isShowTable = !this.isShowTable;
-    //     this.buttonText = this.isShowTable ? "Hide Table" : "Show Table";
-    // }
+    }
 }
